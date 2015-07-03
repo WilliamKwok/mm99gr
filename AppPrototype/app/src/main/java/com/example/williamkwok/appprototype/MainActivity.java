@@ -124,19 +124,19 @@ public class MainActivity extends Activity implements OnClickListener{
             switch(vid)
             {
                 case R.id.button1:
-                    textMessage = "Button1 clicked";
+                    textMessage = "Towel Requested - Button1 clicked";
                     break;
                 case R.id.button2:
-                    textMessage = "Button2 clicked";
+                    textMessage = "Room Service Requested - Button2 clicked";
                     break;
                 case R.id.button3:
-                    textMessage = "Button3 clicked";
+                    textMessage = "Amenities - Button3 clicked";
                     break;
                 case R.id.button4:
-                    textMessage = "Button4 clicked";
+                    textMessage = "Wake Up Call setup - Button4 clicked";
                     break;
                 case R.id.button5:
-                    textMessage = "Button5 clicked";
+                    textMessage = "Pay per view - Button5 clicked";
                     break;
                 case R.id.button6:
                     textMessage = "Button6 clicked";
