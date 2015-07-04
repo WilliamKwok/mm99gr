@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class InitializeActivity extends ActionBarActivity implements View.OnClickListener {
+public class InitializeActivity extends Activity implements View.OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.example.williamkwok.appprototype.MESSAGE";
 
