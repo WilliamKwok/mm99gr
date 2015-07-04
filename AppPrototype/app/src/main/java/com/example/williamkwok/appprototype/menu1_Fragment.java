@@ -50,12 +50,6 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
     Button button6;
     String roomNumber;
 
-//    public menu1_Fragment(String roomNumber)
-//    {
-//        roomNumber = roomNumber;
-//    }
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -68,8 +62,8 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
         //button6 = (Button) findViewById(R.id.button6);
 
         context = getActivity();
-        roomNumber = getArguments().getString("roomNumber");
-
+        roomNumber = this.getArguments().getString("roomNumberS");
+        //System.out.println(roomNumber); // breaks here when using String
         button1.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -141,7 +135,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
             try{
                 Message message = new MimeMessage (session);
                 message.setFrom(new InternetAddress("testing12345testt@gmail.com"));
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("williamkwok92@gmail.com"));
+                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("williamkwok92@gmail.com,zzazengna@gmail.com,williamkwok_@live.ca"));
                 message.setSubject(textMessage);
                 message.setContent(textMessage, "text/html; charset=utf-8");
                 Transport.send(message);

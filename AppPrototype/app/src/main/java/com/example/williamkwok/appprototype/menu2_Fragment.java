@@ -13,6 +13,7 @@ public class menu2_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.menu2_layout, container, false);
+        TouchImageView menu_img = (TouchImageView) rootview.findViewById(R.id.amenities_img);
         return rootview;
     }
 }

@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity
 
         Intent intent = getIntent();
         roomNumber = intent.getStringExtra(InitializeActivity.EXTRA_MESSAGE);
-
+        //System.out.println(roomNumber);
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 
@@ -86,12 +86,12 @@ public class MainActivity extends ActionBarActivity
         }
 
         Bundle stringBundle = new Bundle();
-        stringBundle.putString("roomNumber", roomNumber);
+        stringBundle.putString("roomNumberS", roomNumber);
         objFragment.setArguments(stringBundle);
 
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
+        fragmentManager.beginTransaction().setCustomAnimations(android.R.anim.fade_in,android.R.anim.fade_out)
                 .replace(R.id.container, objFragment)
                 .commit();
     }
