@@ -1,6 +1,7 @@
 package com.example.williamkwok.appprototype;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -44,10 +45,19 @@ public class MainActivity extends ActionBarActivity
      */
     private CharSequence mTitle;
 
+    /**
+     * For the room number received in room initialactivity
+     * @param savedInstanceState
+     */
+    private String roomNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
+
+        Intent intent = getIntent();
+        roomNumber = intent.getStringExtra(InitializeActivity.EXTRA_MESSAGE);
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -73,6 +83,11 @@ public class MainActivity extends ActionBarActivity
                 objFragment = new menu3_Fragment();
                 break;
         }
+
+        Bundle stringBundle = new Bundle();
+        stringBundle.putString("roomNumber", roomNumber);
+        objFragment.setArguments(stringBundle);
+
         // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()

@@ -48,6 +48,13 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
     Button button4;
     Button button5;
     Button button6;
+    private String roomNumber;
+
+//    public menu1_Fragment(String roomNumber)
+//    {
+//        roomNumber = roomNumber;
+//    }
+
 
     @Nullable
     @Override
@@ -61,7 +68,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
         //button6 = (Button) findViewById(R.id.button6);
 
         context = getActivity();
-
+        roomNumber = getArguments().getString("roomNumber");
         button1.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -87,7 +94,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
             }
         });
 
-        pdialog = ProgressDialog.show(context, "", "Sending Mail...", true);
+        pdialog = ProgressDialog.show(context, "", "Sending Request...", true);
 
         RetrieveFeedTask task = new RetrieveFeedTask(vId);
         task.execute();
@@ -108,19 +115,19 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
             switch(vid)
             {
                 case R.id.button1:
-                    textMessage = "Towel Requested - Button1 clicked";
+                    textMessage = "Room " + roomNumber + ": Towel Requested - Button1 clicked";
                     break;
                 case R.id.button2:
-                    textMessage = "Room Service Requested - Button2 clicked";
+                    textMessage = "Room" + roomNumber + ": Room Service Requested - Button2 clicked";
                     break;
                 case R.id.button3:
-                    textMessage = "Amenities - Button3 clicked";
+                    textMessage = "Room" + roomNumber + ": Amenities - Button3 clicked";
                     break;
                 case R.id.button4:
-                    textMessage = "Wake Up Call setup - Button4 clicked";
+                    textMessage = "Room" + roomNumber + ": Wake Up Call setup - Button4 clicked";
                     break;
                 case R.id.button5:
-                    textMessage = "Pay per view - Button5 clicked";
+                    textMessage = "Room" + roomNumber + ": Pay per view - Button5 clicked";
                     break;
 //                case R.id.button6:
 //                    textMessage = "Button6 clicked";
@@ -148,7 +155,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
         @Override
         protected void onPostExecute(String result) {
             pdialog.dismiss();
-            Toast.makeText(context.getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
+            Toast.makeText(context.getApplicationContext(), "Request sent", Toast.LENGTH_LONG).show();
         }
     }
 }
