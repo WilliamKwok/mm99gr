@@ -48,7 +48,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
     Button button4;
     Button button5;
     Button button6;
-    private String roomNumber;
+    String roomNumber;
 
 //    public menu1_Fragment(String roomNumber)
 //    {
@@ -69,6 +69,7 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
 
         context = getActivity();
         roomNumber = getArguments().getString("roomNumber");
+
         button1.setOnClickListener(this);
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -115,19 +116,19 @@ public class menu1_Fragment extends Fragment implements OnClickListener {
             switch(vid)
             {
                 case R.id.button1:
-                    textMessage = "Room " + roomNumber + ": Towel Requested - Button1 clicked";
+                    textMessage = "Room-" + roomNumber + ": Towel Requested - Button1 clicked";
                     break;
                 case R.id.button2:
-                    textMessage = "Room" + roomNumber + ": Room Service Requested - Button2 clicked";
+                    textMessage = "Room-" + roomNumber + ": Room Service Requested - Button2 clicked";
                     break;
                 case R.id.button3:
-                    textMessage = "Room" + roomNumber + ": Amenities - Button3 clicked";
+                    textMessage = "Room-" + roomNumber + ": Amenities - Button3 clicked";
                     break;
                 case R.id.button4:
-                    textMessage = "Room" + roomNumber + ": Wake Up Call setup - Button4 clicked";
+                    textMessage = "Room-" + roomNumber + ": Wake Up Call setup - Button4 clicked";
                     break;
                 case R.id.button5:
-                    textMessage = "Room" + roomNumber + ": Pay per view - Button5 clicked";
+                    textMessage = "Room-" + roomNumber + ": Pay per view - Button5 clicked";
                     break;
 //                case R.id.button6:
 //                    textMessage = "Button6 clicked";
